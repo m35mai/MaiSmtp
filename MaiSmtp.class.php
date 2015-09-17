@@ -303,7 +303,7 @@ class MaiSmtp {
         $this->sendCommand("MAIL FROM:<{$this->from}>", '250');
         $this->sendRecipients();
         $this->sendCommand('DATA', '354');
-        $this->sendCommand($this->getMailHeader($subject) . $this->getMailBody($message));
+        $this->sendCommand($this->getMailHeader($subject) . $this->getMailBody($message), '250');
         return empty($this->error);
     }
 
